@@ -12,6 +12,6 @@ Questo repository contiene gli esercizi di lab pratici per i percorsi di Microso
 
 ## Come si può contribuire?
 
-- Chiunque può inviare una richiesta pull al codice o al contenuto nella riprova di GitHub, Microsoft e l'autore del corso eseguirà la valutazione e includerà modifiche al contenuto e al codice del lab in base alle esigenze.
+- Chiunque può inviare una richiesta pull al codice o al contenuto nel repository GitHub, Microsoft e l'autore del corso eseguirà la valutazione e includerà modifiche al contenuto e al codice del lab in base alle esigenze.
 
 - È possibile inviare segnalazioni di bug, modifiche, miglioramenti e idee.  Se si scopre in anteprima una nuova funzionalità di Azure,  Inviare una nuova demo.
