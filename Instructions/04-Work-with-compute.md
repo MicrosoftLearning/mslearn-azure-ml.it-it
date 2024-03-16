@@ -20,7 +20,7 @@ Un'area di lavoro di* Azure Machine Learning *offre una posizione centrale per g
 Per creare l'area di lavoro di Azure Machine Learning, si userà l'interfaccia della riga di comando di Azure. Tutti i comandi necessari vengono raggruppati in uno script shell da eseguire.
 
 1. In un browser aprire il portale di Azure in `https://portal.azure.com/`, accedere con l'account Microsoft.
-1. Selezionare il \[pulsante >_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Verrà aperto un riquadro di Cloud Shell nella parte inferiore del portale.
+1. Selezionare il \[pulsante >_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Si aprirà un riquadro di Cloud Shell nella parte inferiore del portale.
 1. Selezionare **Bash** se richiesto. La prima volta che si apre Cloud Shell, verrà chiesto di scegliere il tipo di shell da usare (*Bash* o *PowerShell*).
 1. Verificare che la sottoscrizione corretta sia specificata e selezionare Crea archiviazione **** se viene chiesto di creare l'archiviazione per Cloud Shell. Attendere la creazione dello spazio di archiviazione.
 1. Per evitare conflitti con le versioni precedenti, rimuovere tutte le estensioni dell'interfaccia della riga di comando di Ml (versione 1 e 2) eseguendo questo comando nel terminale:
@@ -65,7 +65,7 @@ Per eseguire notebook all'interno dell'area di lavoro di Azure Machine Learning,
 1. **Nel riquadro File** selezionare l'icona &#10753; per **Aggiungere file**.
 1. Selezionare **Create new file** (Crea nuovo file).
 1. Verificare che il percorso del file sia **Users/* your-user-name**.
-1. Modificare il tipo di file in **Bash (*.sh).**.
+1. Modificare il tipo di file in **Bash (*.sh)**.
 1. Modificare il nome file in `compute-setup.sh`.
 1. Aprire il file compute-setup.sh** appena creato **e incollarne il contenuto:
 

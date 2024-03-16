@@ -26,7 +26,7 @@ Per consentire a un data scientist di eseguire il training di un modello di Mach
 Per iniziare, aprire Azure Cloud Shell, installare l'estensione Azure Machine Learning e clonare il repository Git.
 
 1. In un browser aprire il portale di Azure in `https://portal.azure.com/`, accedere con l'account Microsoft.
-1. Selezionare il \[pulsante >_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Verrà aperto un riquadro di Cloud Shell nella parte inferiore del portale.
+1. Selezionare il \[pulsante >_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Si aprirà un riquadro di Cloud Shell nella parte inferiore del portale.
 1. Selezionare **Bash** se richiesto. La prima volta che si apre Cloud Shell, verrà chiesto di scegliere il tipo di shell da usare (*Bash* o *PowerShell*).
 1. Verificare che la sottoscrizione corretta sia specificata e selezionare Crea archiviazione **** se viene chiesto di creare l'archiviazione per Cloud Shell. Attendere la creazione dello spazio di archiviazione.
 1. Rimuovere tutte le estensioni dell'interfaccia della riga di comando di ML (versione 1 e 2) per evitare conflitti con le versioni precedenti con questo comando:

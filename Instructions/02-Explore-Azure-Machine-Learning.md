@@ -19,14 +19,14 @@ In questo esercizio si userà il portale di Azure per eseguire il provisioning d
 
 1. Accedere a `https://portal.azure.com/`.
 2. Creare una nuova **risorsa di Azure Machine Learning** con le impostazioni seguenti:
-    - **Sottoscrizione**: *sottoscrizione di Azure*
+    - **Sottoscrizione**: *la sottoscrizione di Azure usata*
     - **Gruppo di risorse**: `rg-dp100-labs`
     - **Nome** area di lavoro: `mlw-dp100-labs`
     - **Area**: *selezionare l'area geografica più vicina*
     - **Archiviazione account**: *prendere nota del nuovo account di archiviazione predefinito che verrà creato per l'area di lavoro*
     - **Insieme di credenziali** delle chiavi: *prendere nota del nuovo insieme di credenziali delle chiavi predefinito che verrà creato per l'area di lavoro*
     - **Application Insights: *prendere nota della nuova risorsa predefinita di Application Insights** che verrà creata per l'area di lavoro*
-    - **Registro** Contenitori: nessuno (*ne verrà creato uno automaticamente la prima volta che si distribuisce un modello in un contenitore*)
+    - **Registro contenitori**: nessuno (*ne verrà creato uno automaticamente la prima volta che si distribuisce un modello in un contenitore*)
 3. Attendere che l'area di lavoro e le relative risorse associate vengano create, in genere sono necessari circa 5 minuti.
 
 > **Nota**: quando si crea un'area di lavoro di Azure Machine Learning, è possibile usare alcune opzioni avanzate che consentono di limitare l'accesso tramite un *endpoint* privato e di specificare chiavi personalizzate per la crittografia dei dati. Queste opzioni non verranno usate in questo esercizio, ma è importante sapere che sono disponibili.
@@ -59,7 +59,7 @@ Un modo rapido per creare una pipeline di training del modello consiste nell'usa
     Viene visualizzata una nuova pipeline. Nella parte superiore della pipeline viene visualizzato un componente per caricare **i dati sul prezzo dell'automobile (non elaborati).** La pipeline elabora i dati ed esegue il training di un modello di regressione lineare per stimare il prezzo per ogni automobile.
 1. Selezionare **Configura e invia** nella parte superiore della pagina per aprire la **finestra di dialogo Configura processo pipeline**
 1. Nella **pagina Informazioni di base** selezionare **Crea nuovo** e impostare il nome dell'esperimento su `train-regression-designer` e quindi selezionare **Avanti** .
-1. Nella **pagina Input e output** selezionare **Avanti** senza apportare modifiche.
+1. Nella pagina **Input e output** selezionare **Avanti** senza apportare modifiche.
 1. **Nella pagina Impostazioni** di runtime viene visualizzato un errore perché non si è un calcolo predefinito per eseguire la pipeline.
 
 Verrà ora creata una destinazione di calcolo.
@@ -91,7 +91,7 @@ Per eseguire qualsiasi carico di lavoro all'interno dell'area di lavoro di Azure
 
 3. Selezionare **Crea** e attendere l'avvio dell'istanza di calcolo e il relativo stato in **Esecuzione**.
 
-> **Nota**: le istanze di calcolo e i cluster sono basati su immagini di macchine virtuali di Azure standard. Per questo esercizio, è consigliabile usare l'immagine *Standard_DS11_v2* per ottenere un equilibrio ottimale tra costi e prestazioni. Se la quota della sottoscrizione in uso non include questa immagine, scegliere un'immagine alternativa, ma tenere presente che un'immagine superiore può generare costi più elevati e un'immagine inferiore potrebbe non essere sufficiente per completare le attività. In alternativa, chiedere all'amministratore di Azure di estendere la quota.
+> **Nota**: le istanze di calcolo e i cluster sono basati su immagini di macchine virtuali di Azure standard. Per questo esercizio, è consigliabile usare l'immagine *Standard_DS11_v2* per ottenere un equilibrio ottimale tra costi e prestazioni. Se la quota della sottoscrizione in uso non include questa immagine, scegliere un'immagine alternativa, ma tenere presente che un'immagine più grande può generare costi più elevati e un'immagine più piccola potrebbe non essere sufficiente per completare le attività. In alternativa, chiedere all'amministratore di Azure di estendere la quota.
 
 ## Eseguire la pipeline di training
 
@@ -101,7 +101,7 @@ Per eseguire qualsiasi carico di lavoro all'interno dell'area di lavoro di Azure
 1. Selezionare la **bozza della pipeline Regression - Automobile Price Prediction (basic).**
 1. Selezionare **Configura e invia** nella parte superiore della pagina per aprire la **finestra di dialogo Configura processo pipeline**
 1. Nella **pagina Informazioni di base** selezionare **Crea nuovo** e impostare il nome dell'esperimento su `train-regression-designer` e quindi selezionare **Avanti** .
-1. Nella **pagina Input e output** selezionare **Avanti** senza apportare modifiche.
+1. Nella pagina **Input e output** selezionare **Avanti** senza apportare modifiche.
 1. Nell'elenco ****a discesa Seleziona tipo di** calcolo delle impostazioni** di runtime selezionare *Istanza* di calcolo e nell'elenco a discesa Selezionare l'istanza **** di calcolo di Azure ML selezionare l'istanza di calcolo appena creata.
 1. Selezionare **Rivedi e invia** per esaminare il processo della pipeline e quindi selezionare **Invia** per eseguire la pipeline di training.
 

@@ -6,12 +6,12 @@ Questo repository contiene gli esercizi pratici del lab per i percorsi di appren
 
 ## Cosa stiamo facendo?
 
-- Per supportare questo corso, è necessario apportare aggiornamenti frequenti al contenuto del corso per mantenerlo aggiornato con i servizi di Azure usati nel corso.  Stiamo pubblicando le istruzioni del lab e i file di lab in GitHub per consentire contributi aperti tra gli autori del corso e i mct per mantenere aggiornato il contenuto con le modifiche apportate alla piattaforma Azure.
+- Per supportare questo corso, dovremo apportare di frequente aggiornamenti al contenuto per mantenerlo in linea con i servizi di Azure usati nel corso.  Le istruzioni e i file dei lab sono pubblicati su GitHub per consentire contributi aperti tra gli autori del corso e gli MCT, in modo da mantenere aggiornato il contenuto con le modifiche della piattaforma Azure.
 
-- Ci auguriamo che questo porta un senso di collaborazione ai lab come non abbiamo mai avuto prima, quando Azure cambia e lo trovi prima durante una distribuzione in tempo reale, procedere e apportare un miglioramento corretto nell'origine del lab. 
+- L'auspicio è favorire un senso di collaborazione per i lab come mai prima d'ora. Quando si verificano modifiche in Azure e vengono rilevate durante una distribuzione in tempo reale, è possibile apportare miglioramenti direttamente nell'origine del lab. 
 
-## Ricerca per categorie contribuire?
+## Come è possibile contribuire?
 
 - Chiunque può inviare una richiesta pull al codice o al contenuto nel repository GitHub, Microsoft e l'autore del corso valuta e includerà le modifiche al contenuto e al codice del lab in base alle esigenze.
 
-- È possibile inviare bug, modifiche, miglioramenti e idee.  Trovare una nuova funzionalità di Azure prima di avere?  Invia una nuova demo!
+- È possibile inviare bug, modifiche, miglioramenti e idee.  Se si scopre in anticipo una nuova funzionalità di Azure?  Inviare una nuova demo.
