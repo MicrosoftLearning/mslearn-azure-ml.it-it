@@ -88,15 +88,17 @@ Per creare l'istanza di calcolo, è possibile usare studio, Python SDK o l'inter
     - **Nome dell'ambiente di calcolo**: *immettere un nome univoco*
     - **Tipo di** macchina virtuale: *CPU*
     - **Dimensioni macchina** virtuale: *Standard_DS11_v2*
-1. Selezionare **Avanti: Impostazioni** avanzate.
+1. Selezionare **Avanti**.
 1. Selezionare Aggiungi pianificazione** e configurare la pianificazione per **arrestare** l'istanza di calcolo ogni giorno alle **18:00** o **alle 16:00**.**
-1. Selezionare l'interruttore provisioning **con lo script** di installazione.
-1. Selezionare lo **script compute-setup.sh** creato in precedenza.
-1. Esaminare le altre impostazioni avanzate, ma **non** selezionarle:
+1. Selezionare **Avanti**.
+1. Esaminare le impostazioni di sicurezza ma **non** selezionarle:
     - **Abilitare l'accesso** SSH: *è possibile usare questa opzione per abilitare l'accesso diretto alla macchina virtuale usando un client SSH.*
     - **Abilitare la rete** virtuale: *in genere si usa questa funzionalità in un ambiente aziendale per migliorare la sicurezza di rete.*
     - **Assegna a un altro utente**: *è possibile usarlo per assegnare un'istanza di calcolo a un altro data scientist.*
-1. **Creare** l'istanza di calcolo e attendere l'avvio e il relativo stato in **Esecuzione**.
+1. Selezionare **Avanti**.
+1. Selezionare l'interruttore provisioning **con uno script** di creazione.
+1. Selezionare lo **script compute-setup.sh** creato in precedenza.
+1. Selezionare **Rivedi e crea** per creare l'istanza di calcolo e attendere l'avvio e il relativo stato in **Esecuzione**.
 1. Quando l'istanza di calcolo è in esecuzione, passare alla **pagina Notebook.** **Nel riquadro File** fare clic su **&#8635;** per aggiornare la visualizzazione e verificare che sia stata creata una nuova **cartella Users/*your-user-name*/dp100-azure-ml-labs**.
 
 ## Configurare l'istanza di calcolo

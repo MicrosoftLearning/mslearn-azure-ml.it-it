@@ -114,9 +114,10 @@ Dopo aver convertito un notebook in uno script, è possibile perfezionarlo ulter
 
     Per eseguire correttamente lo script, è necessario specificare il valore per i parametri dei dati di training. A questo scopo, fare riferimento al **file diabetes.csv** archiviato nella stessa cartella dello script di training.
 
-1. Eseguire il comando seguente nel terminale:
+1. Nel terminale eseguire i comandi seguenti:
 
     ```
+    cd azure-ml-labs/Labs/08/src/
     python train-model-parameters.py --training_data diabetes.csv
     ```
 
