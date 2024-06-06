@@ -1,6 +1,6 @@
 ## Esercizi pratici per Azure Machine Learning (v2)
 
-Questo repository contiene gli esercizi pratici del lab per i percorsi di apprendimento Microsoft che esplorano Azure Machine Learning. I percorsi di apprendimento sono costituiti da moduli auto-passo in Microsoft Learn. I lab sono progettati per accompagnare i materiali di apprendimento e consentire di esercitarsi nell'uso delle tecnologie descritte.
+Questo repository contiene gli esercizi pratici del lab per i percorsi di apprendimento Microsoft, finalizzati a esplorare Azure Machine Learning. I percorsi di apprendimento sono costituiti da moduli autogestiti in Microsoft Learn. I lab sono progettati per accompagnare i materiali di apprendimento e consentire di esercitarsi nell'uso delle tecnologie descritte.
 
 È possibile visualizzare le istruzioni per gli esercizi del lab in [https://microsoftlearning.github.io/mslearn-azure-ml/](https://microsoftlearning.github.io/mslearn-azure-ml/).
 
@@ -12,6 +12,6 @@ Questo repository contiene gli esercizi pratici del lab per i percorsi di appren
 
 ## Come è possibile contribuire?
 
-- Chiunque può inviare una richiesta pull al codice o al contenuto nel repository GitHub, Microsoft e l'autore del corso valuta e includerà le modifiche al contenuto e al codice del lab in base alle esigenze.
+- Tutti possono inviare una richiesta pull al codice o ai contenuti del repository GitHub. Microsoft e l'autore del corso effettueranno una valutazione e, se necessario, includeranno le modifiche a contenuti e al codice dei lab.
 
 - È possibile inviare bug, modifiche, miglioramenti e idee.  Se si scopre in anticipo una nuova funzionalità di Azure?  Inviare una nuova demo.
