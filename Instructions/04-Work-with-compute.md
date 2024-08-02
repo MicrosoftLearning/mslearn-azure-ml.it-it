@@ -22,7 +22,7 @@ Per creare l'area di lavoro di Azure Machine Learning, si userà l’interfaccia
 1. Nel browser, aprire il portale di Azure all'indirizzo `https://portal.azure.com/`, eseguendo l'accesso con l'account Microsoft.
 1. Selezionare il pulsante \[>_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Si aprirà un riquadro di Cloud Shell nella parte inferiore del portale.
 1. Se richiesto, selezionare **Bash**. La prima volta che si apre Cloud Shell, verrà chiesto di scegliere il tipo di shell da usare (*Bash* o *PowerShell*).
-1. Verificare che sia specificata la sottoscrizione corretta e selezionare **Crea risorsa di archiviazione**, se è richiesto di creare la risorsa di archiviazione per la cloud shell. Attendere la creazione dello spazio di archiviazione.
+1. Verificare che sia specificata la sottoscrizione corretta e che **non sia selezionato Nessun account di archiviazione necessario** . Selezionare **Applica**.
 1. Per evitare conflitti con le versioni precedenti, rimuovere tutte le estensioni dell'interfaccia della riga di comando di AML (entrambe le versioni, 1 e 2) eseguendo questo comando nel terminale:
 
     ```azurecli
@@ -59,7 +59,7 @@ Per creare l'area di lavoro di Azure Machine Learning, si userà l’interfaccia
 Per eseguire i notebook all'interno dell'area di lavoro di Azure Machine Learning, è necessaria un'istanza di ambiente di calcolo. Per configurare l’istanza di ambiente di calcolo durante la creazione è possibile usare uno script di installazione.
 
 1. Nel portale di Azure passare all'area di lavoro di Azure Machine Learning denominata **mlw-dp100-labs**.
-1. Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina **Panoramica** selezionare **Avvio Studio**. Nel browser sarà aperta un'altra scheda per aprire studio di Azure Machine Learning.
+1. Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina **Panoramica** selezionare **Avvio Studio**. Nel browser verrà aperta un'altra scheda per aprire studio di Azure Machine Learning.
 1. Chiudere tutti i popup visualizzati in Studio.
 1. All’interno di studio di Azure Machine Learning, passare alla pagina **Notebook**.
 1. Nel riquadro **File** selezionare l’icona &#10753; per **Aggiungere file**.
@@ -132,7 +132,7 @@ I notebook sono ideali per lo sviluppo o per il lavoro iterativo durante le fasi
 
 Quando si finisce di esplorare Azure Machine Learning, è necessario eliminare le risorse create per evitare costi di Azure non necessari.
 
-1. Chiudere la scheda studio di Azure Machine Learning e tornare alla portale di Azure.
+1. Chiudere la scheda Studio di Azure Machine Learning e tornare al portale di Azure.
 1. Nella **Home page** del portale di Azure selezionare **Gruppi di risorse**.
 1. Selezionare il gruppo di risorse **rg-dp100-labs**.
 1. Nel parte superiore della pagina **Panoramica** del gruppo di risorse selezionare **Elimina gruppo di risorse**.

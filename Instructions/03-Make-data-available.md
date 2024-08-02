@@ -26,7 +26,7 @@ Per creare l'area di lavoro di Azure Machine Learning e le risorse dell’ambien
 1. Nel browser, aprire il portale di Azure all'indirizzo `https://portal.azure.com/`, eseguendo l'accesso con l'account Microsoft.
 1. Selezionare il pulsante \[>_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Si aprirà un riquadro di Cloud Shell nella parte inferiore del portale.
 1. Se richiesto, selezionare **Bash**. La prima volta che si apre Cloud Shell, verrà chiesto di scegliere il tipo di shell da usare (*Bash* o *PowerShell*).
-1. Verificare che sia specificata la sottoscrizione corretta e selezionare **Crea risorsa di archiviazione**, se è richiesto di creare la risorsa di archiviazione per la cloud shell. Attendere la creazione della risorsa di archiviazione.
+1. Verificare che sia specificata la sottoscrizione corretta e che **non sia selezionato Nessun account di archiviazione necessario** . Selezionare **Applica**.
 1. Immettere i comandi seguenti nel terminale per clonare questo repository:
 
     ```azurecli
@@ -77,10 +77,10 @@ Per creare un archivio dati nell'area di lavoro Azure Machine Learning, è neces
 Per creare un archivio dati e asset di dati con l’SDK Python, è necessario clonare i materiali del lab nell'area di lavoro.
 
 1. Nel portale di Azure passare all'area di lavoro di Azure Machine Learning denominata **mlw-dp100-labs**.
-1. Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina **Panoramica** selezionare **Avvio Studio**. Nel browser sarà aperta un'altra scheda per aprire studio di Azure Machine Learning.
-1. Chiudere tutti i popup visualizzati in Studio.
-1. All'interno di studio di Azure Machine Learning, passare alla pagina **Calcolo** e verificare che esistano l'istanza di ambiente di calcolo e il cluster creati nella sezione precedente. L'istanza di ambiente di calcolo deve essere in esecuzione, il cluster deve essere inattivo e avere 0 nodi in esecuzione.
-1. Nella scheda **Istanze di ambiente di calcolo** individuare l'istanza di ambiente di calcolo e selezionare l'applicazione **Terminale**.
+1. Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina **Panoramica** selezionare **Avvio Studio**. Nel browser verrà aperta un'altra scheda per aprire studio di Azure Machine Learning.
+1. Chiudere tutti i popup visualizzati in studio.
+1. All'interno dello studio di Azure Machine Learning, passare alla pagina **Ambiente di calcolo** e verificare che l'istanza di ambiente di calcolo e il cluster creati nella sezione precedente esistano. L'istanza di ambiente di calcolo deve essere in esecuzione, il cluster deve essere inattivo e avere 0 nodi in esecuzione.
+1. Nella scheda **Istanze di ambiente di calcolo**, individuare l'istanza di ambiente di calcolo e selezionare l'applicazione **Terminale**.
 1. Nel terminale installare Python SDK nell'istanza di ambiente di calcolo, eseguendo nel terminale i comandi seguenti:
 
     ```azurecli
@@ -125,7 +125,7 @@ Il codice per creare un archivio dati e asset di dati con l’SDK Python viene f
 
 Quando si finisce di esplorare Azure Machine Learning, è necessario eliminare le risorse create per evitare costi di Azure non necessari.
 
-1. Chiudere la scheda studio di Azure Machine Learning e tornare al portale di Azure.
+1. Chiudere la scheda Studio di Azure Machine Learning e tornare al portale di Azure.
 1. Nella **Home page** del portale di Azure selezionare **Gruppi di risorse**.
 1. Selezionare il gruppo di risorse **rg-dp100-...**.
 1. Nel parte superiore della pagina **Panoramica** del gruppo di risorse selezionare **Elimina gruppo di risorse**.
