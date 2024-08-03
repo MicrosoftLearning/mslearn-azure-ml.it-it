@@ -26,7 +26,7 @@ Per creare l'area di lavoro di Azure Machine Learning, un'istanza di ambiente di
 1. Nel browser, aprire il portale di Azure all'indirizzo `https://portal.azure.com/`, eseguendo l'accesso con l'account Microsoft.
 1. Selezionare il pulsante \[>_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Si aprirà un riquadro di Cloud Shell nella parte inferiore del portale.
 1. Se richiesto, selezionare **Bash**. La prima volta che si apre Cloud Shell, verrà chiesto di scegliere il tipo di shell da usare (*Bash* o *PowerShell*).
-1. Verificare che sia specificata la sottoscrizione corretta e selezionare **Crea risorsa di archiviazione**, se è richiesto di creare la risorsa di archiviazione per la cloud shell. Attendere la creazione della risorsa di archiviazione.
+1. Verificare che sia specificata la sottoscrizione corretta e che **non sia selezionato Nessun account di archiviazione necessario** . Selezionare **Applica**.
 1. Nel terminale, immettere i comandi seguenti per clonare questo repository:
 
     ```azurecli

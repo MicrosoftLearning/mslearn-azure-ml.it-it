@@ -15,18 +15,18 @@ Sarà necessaria una [sottoscrizione di Azure](https://azure.microsoft.com/free?
 
 ## Effettuare il provisioning di un'area di lavoro di Azure Machine Learning
 
-Un'*area di lavoro* di Azure Machine Learning offre una posizione centrale per gestire tutte le risorse e gli asset necessari per eseguire il training e gestire i modelli. È possibile interagire con l'area di lavoro di Azure Machine Learning tramite studio, Python SDK e l'interfaccia della riga di comando di Azure.
+Un'*area di lavoro* di Azure Machine Learning offre una posizione centrale per gestire tutte le risorse e gli asset necessari per eseguire il training e gestire i modelli. È possibile interagire con l'area di lavoro di Azure Machine Learning tramite Studio, Python SDK e l'interfaccia della riga di comando di Azure.
 
-Si userà l'interfaccia della riga di comando di Azure per effettuare il provisioning dell'area di lavoro e il calcolo necessario e si userà Python SDK per eseguire un processo di comando.
+Si userà l'interfaccia della riga di comando di Azure per effettuare il provisioning dell'area di lavoro e dell'ambiente di calcolo necessario, e si userà Python SDK per eseguire un processo di comando.
 
-### Creare l'area di lavoro e le risorse di calcolo
+### Creare l'area di lavoro e le risorse dell'ambiente di calcolo
 
-Per creare l'area di lavoro di Azure Machine Learning, un'istanza di ambiente di calcolo e un cluster di calcolo, si userà l'interfaccia della riga di comando di Azure. Tutti i comandi necessari vengono raggruppati in uno script shell da eseguire.
+Per creare l'area di lavoro di Azure Machine Learning, un'istanza di ambiente di calcolo e un cluster di elaborazione, si userà l'interfaccia della riga di comando di Azure. Tutti i comandi necessari sono raggruppati in uno script shell da eseguire.
 
 1. Nel browser, aprire il portale di Azure all'indirizzo `https://portal.azure.com/`, eseguendo l'accesso con l'account Microsoft.
 1. Selezionare il pulsante \[>_] (*Cloud Shell*) nella parte superiore della pagina a destra della casella di ricerca. Si aprirà un riquadro di Cloud Shell nella parte inferiore del portale.
-1. Selezionare **Bash** se richiesto. La prima volta che si apre Cloud Shell, verrà chiesto di scegliere il tipo di shell da usare (*Bash* o *PowerShell*).
-1. Verificare che sia specificata la sottoscrizione corretta e selezionare **Crea risorsa di archiviazione**, se è richiesto di creare la risorsa di archiviazione per la cloud shell. Attendere la creazione dello spazio di archiviazione.
+1. Se richiesto, selezionare **Bash**. La prima volta che si apre Cloud Shell, verrà chiesto di scegliere il tipo di shell da usare (*Bash* o *PowerShell*).
+1. Verificare che sia specificata la sottoscrizione corretta e che **non sia selezionato Nessun account di archiviazione necessario** . Selezionare **Applica**.
 1. Nel terminale, immettere i comandi seguenti per clonare questo repository:
 
     ```azurecli
@@ -34,7 +34,7 @@ Per creare l'area di lavoro di Azure Machine Learning, un'istanza di ambiente di
     git clone https://github.com/MicrosoftLearning/mslearn-azure-ml.git azure-ml-labs
     ```
 
-    > Usare `SHIFT + INSERT` per incollare il codice copiato in Cloud Shell.
+    > Usare `SHIFT + INSERT` per incollare in Cloud Shell il codice copiato.
 
 1. Dopo aver clonato il repository, immettere i comandi seguenti per passare alla cartella per questo lab ed eseguire lo script **setup.sh** che contiene:
 
@@ -52,9 +52,9 @@ Per creare l'area di lavoro di Azure Machine Learning, un'istanza di ambiente di
 Dopo aver creato l'area di lavoro e le risorse di calcolo necessarie, è possibile aprire studio di Azure Machine Learning e clonare i materiali del lab nell'area di lavoro.
 
 1. Nel portale di Azure, passare all'area di lavoro di Azure Machine Learning denominata **mlw-dp100-...**.
-1. Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina **Panoramica**, selezionare **Avvio studio**. Nel browser sarà aperta un'altra scheda per aprire studio di Azure Machine Learning.
+1. Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina **Panoramica** selezionare **Avvio Studio**. Nel browser verrà aperta un'altra scheda per aprire studio di Azure Machine Learning.
 1. Chiudere tutti i popup visualizzati in studio.
-1. All'interno dello studio di Azure Machine Learning, passare alla pagina **Calcolo** e verificare che l'istanza di ambiente di calcolo e il cluster creati nella sezione precedente esistano. L'istanza di ambiente di calcolo deve essere in esecuzione, il cluster deve essere inattivo e avere 0 nodi in esecuzione.
+1. All'interno dello studio di Azure Machine Learning, passare alla pagina **Ambiente di calcolo** e verificare che l'istanza di ambiente di calcolo e il cluster creati nella sezione precedente esistano. L'istanza di ambiente di calcolo deve essere in esecuzione, il cluster deve essere inattivo e avere 0 nodi in esecuzione.
 1. Nella scheda **Istanze di ambiente di calcolo**, individuare l'istanza di ambiente di calcolo e selezionare l'applicazione **Terminale**.
 1. Nel terminale, installare Python SDK nell'istanza di ambiente di calcolo, eseguendo i comandi seguenti:
 
@@ -88,7 +88,7 @@ Ora che si dispone di tutte le risorse necessarie, è possibile eseguire il note
 
 Quando si finisce di esplorare Azure Machine Learning, è necessario eliminare le risorse create per evitare costi di Azure non necessari.
 
-1. Chiudere la scheda studio di Azure Machine Learning e tornare alla portale di Azure.
+1. Chiudere la scheda Studio di Azure Machine Learning e tornare al portale di Azure.
 1. Nella **Home page** del portale di Azure selezionare **Gruppi di risorse**.
 1. Selezionare il gruppo di risorse **rg-dp100-...**.
 1. Nel parte superiore della pagina **Panoramica** del gruppo di risorse selezionare **Elimina gruppo di risorse**.
