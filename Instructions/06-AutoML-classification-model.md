@@ -92,7 +92,9 @@ Ora che sono disponibili tutte le risorse necessarie, è possibile eseguire il n
 1. Attendere che lo stato cambi in **Completato**.
 1. Quando lo stato del processo di Machine Learning automatizzato viene modificato in **Completato**, esplorare i dettagli del processo in studio:
     - La scheda **Protezione dati** indica se nei dati di training si sono verificati problemi.
-    - Nella scheda **Modelli** verranno visualizzati tutti i modelli sottoposti a training. Selezionare **Visualizza spiegazione** per il modello migliore per comprendere quali funzionalità hanno influenzato maggiormente il valore di destinazione.
+    - Nella **scheda Modelli e processi** figlio verranno visualizzati tutti i modelli sottoposti a training. Selezionare **Spiega modello** per il modello migliore e creare l'esecuzione del processo di spiegazione usando aml-cluster****.
+    - Attendere che venga visualizzata una nuova colonna Spiegata** accanto alla **colonna Nome** algoritmo e selezionare **Visualizza spiegazione**.** Potrebbe essere necessario aggiornare l'elenco di algoritmi per visualizzare questa opzione.
+    - Esaminare il dashboard creato per comprendere quali funzionalità hanno influenzato maggiormente il valore di destinazione.
 
 ## Eliminare le risorse di Azure
 
