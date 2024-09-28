@@ -85,6 +85,8 @@ Ora che sono disponibili tutte le risorse necessarie, è possibile eseguire il n
 1. Eseguire tutte le celle nel notebook.
 1. Esaminare il nuovo processo creato ogni volta che si esegue il training di un modello.
 
+    > **Nota:** quando si esegue il training di un modello, l'output della cella mostrerà un collegamento all'esecuzione del processo. Se il collegamento restituisce un errore, è comunque possibile esaminare il processo eseguito selezionando **Processi** nel pannello a sinistra.
+    
 ## Eliminare le risorse di Azure
 
 Quando si finisce di esplorare Azure Machine Learning, è necessario eliminare le risorse create per evitare costi di Azure non necessari.
