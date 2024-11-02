@@ -128,7 +128,7 @@ Ogni volta che si esegue uno script o una pipeline nell'area di lavoro di Azure 
 
 Quando si finisce di esplorare Azure Machine Learning, è necessario eliminare le risorse create per evitare costi di Azure non necessari.
 
-1. Chiudere la scheda studio di Azure Machine Learning e tornare al portale di Azure.
+1. Chiudere la scheda Studio di Azure Machine Learning e tornare al portale di Azure.
 1. Nella **Home page** del portale di Azure selezionare **Gruppi di risorse**.
 1. Selezionare il gruppo di risorse **rg-dp100-labs**.
 1. Nel parte superiore della pagina **Panoramica** del gruppo di risorse selezionare **Elimina gruppo di risorse**.
