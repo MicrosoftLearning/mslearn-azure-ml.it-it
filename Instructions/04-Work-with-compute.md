@@ -103,7 +103,7 @@ Per creare l'istanza ambiente di calcolo, è possibile usare Studio, Python SDK 
 
 ## Configurare l'istanza di ambiente di calcolo
 
-Dopo aver creato l'istanza di ambiente di calcolo, è possibile eseguirvi i notebook. Per eseguire il codice desiderato, potrebbe essere necessario installare determinati pacchetti. È possibile includere pacchetti nello script di installazione, oppure installarli usando il terminale.
+Dopo aver creato l'istanza di calcolo, è possibile eseguirvi notebook. Per eseguire il codice desiderato, potrebbe essere necessario installare determinati pacchetti. È possibile includere pacchetti nello script di installazione, oppure installarli usando il terminale.
 
 1. Nella scheda **Istanze di calcolo** individuare l'istanza di ambiente di calcolo e selezionare l'applicazione **Terminale**.
 1. Nel terminale installare Python SDK nell'istanza di ambiente di calcolo, eseguendo nel terminale i comandi seguenti:
