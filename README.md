@@ -1,3 +1,11 @@
+#README
+
+We've turned off the ability to report issues directly on this repo and do not monitor PRs.
+
+Provide feedback here: https://aka.ms/provide-feedback
+
+Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
+
 ## Esercizi pratici per Azure Machine Learning (v2)
 
 Questo repository contiene gli esercizi pratici del lab per i percorsi di apprendimento Microsoft, finalizzati a esplorare Azure Machine Learning. I percorsi di apprendimento sono costituiti da moduli autogestiti in Microsoft Learn. I lab sono progettati per accompagnare i materiali di apprendimento e consentire di esercitarsi nell'uso delle tecnologie descritte.
