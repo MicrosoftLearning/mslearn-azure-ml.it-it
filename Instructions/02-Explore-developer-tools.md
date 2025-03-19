@@ -112,13 +112,13 @@ Anche se l'interfaccia della riga di comando di Azure è ideale per l'automazion
 1. Nel portale di Azure passare all'area di lavoro di Azure Machine Learning denominata **mlw-dp100-labs**.
 1. Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina **Panoramica** selezionare **Avvio Studio**. Nel browser verrà aperta un'altra scheda per aprire studio di Azure Machine Learning.
 1. Chiudere tutti i popup visualizzati in studio.
-1. All'interno dello studio di Azure Machine Learning, passare alla pagina **Ambiente di calcolo** e verificare che l'istanza di ambiente di calcolo e il cluster creati nella sezione precedente esistano. L'istanza di ambiente di calcolo deve essere in esecuzione, il cluster deve essere inattivo e avere 0 nodi in esecuzione.
+1. All'interno dello studio di Azure Machine Learning, passare alla pagina **Ambiente di calcolo** e verificare che l'istanza di ambiente di calcolo e il cluster creati nella sezione precedente esistano. L'istanza di calcolo deve essere in esecuzione, il cluster deve essere in stato Succeeded e avere 0 nodi in esecuzione.
 
 ## Usare l'SDK Python per eseguire il training di un modello
 
 Dopo aver verificato che l’ambiente di calcolo necessario è stato creato, è possibile usare l’SDK Python per eseguire uno script di training. Si installerà e si userà l’SDK Python nell'istanza di ambiente di calcolo e si eseguirà il training del modello di Machine Learning nel cluster di elaborazione.
 
-1. Selezionare l'applicazione **Terminale** per l'**istanza di ambiente di calcolo** per avviare il terminale.
+1. **Nell'istanza** di calcolo sono disponibili diverse opzioni nel **campo Applicazioni**. Selezionare l'applicazione **Terminale** per avviare il terminale (potrebbe essere necessario fare clic sui puntini di sospensione per espandere la selezione).
 1. Nel terminale installare Python SDK nell'istanza di ambiente di calcolo, eseguendo nel terminale i comandi seguenti:
 
     ```
@@ -139,7 +139,7 @@ Dopo aver verificato che l’ambiente di calcolo necessario è stato creato, è 
 
     > Selezionare **Autenticare** e, se viene visualizzata una notifica che chiede di eseguire l'autenticazione, seguire i passaggi necessari.
 
-1. Verificare che il notebook usi il kernel **Python 3.8 - AzureML**. Ogni kernel ha una propria immagine con un proprio set di pacchetti preinstallati.
+1. Verificare che il notebook usi il **kernel Python 3.8 - AzureML** nell'angolo superiore destro dell'ambiente notebook. Ogni kernel ha una propria immagine con un proprio set di pacchetti preinstallati.
 1. Eseguire tutte le celle nel notebook.
 
 Verrà creato un nuovo processo nell'area di lavoro di Azure Machine Learning. Il processo tiene traccia degli input definiti nella configurazione del processo, del codice usato e degli output come le metriche per valutare il modello.
