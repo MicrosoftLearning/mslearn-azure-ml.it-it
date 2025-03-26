@@ -7,7 +7,7 @@ lab:
 
 Spesso si inizierà un nuovo progetto di data science sperimentando ed eseguendo il training di più modelli. Per tenere traccia del lavoro e mantenere una panoramica dei modelli di cui si esegue il training e delle prestazioni, è possibile usare il rilevamento MLflow.
 
-In questo esercizio, si eseguirà MLflow all'interno di un notebook in esecuzione in un'istanza di ambiente di calcolo per registrare il training del modello.
+In questo esercizio si userà MLflow all'interno di un notebook in esecuzione in un'istanza di calcolo per registrare il training del modello.
 
 ## Prima di iniziare
 
