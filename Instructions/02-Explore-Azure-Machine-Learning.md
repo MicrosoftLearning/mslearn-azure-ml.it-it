@@ -45,84 +45,52 @@ In questo esercizio si userà il portale di Azure per eseguire il provisioning d
 1. Si noti la sezione **Asset** , che include **Dati**, **Processi**e **Modelli**. Gli asset vengono utilizzati o creati durante il training o l'assegnazione di punteggi a un modello. Gli asset vengono usati per eseguire il training, distribuire e gestire i modelli e possono essere sottoposti a controllo delle versioni per tenere traccia della cronologia.
 1. Si noti la sezione **Gestione**, che include **Calcolo** tra le altre cose. Si tratta di risorse infrastrutturali necessarie per eseguire il training o la distribuzione di un modello di Machine Learning.
 
-## Creare una pipeline di training
+## Eseguire il training di un modello con AutoML
 
 Per esplorare l'uso degli asset e delle risorse nell'area di lavoro di Azure Machine Learning, provare a eseguire il training di un modello.
 
-Un modo rapido per creare una pipeline di training del modello consiste nell'usare la **Finestra di progettazione**.
+Un modo rapido per eseguire il training e trovare il modello migliore per un'attività in base ai dati consiste nell'usare l'opzione **AutoML** .
 
 > **Nota**: Potrebbero apparire dei pop-up per guidare l'utente attraverso lo studio. È possibile chiudere e ignorare tutti i popup e concentrarsi sulle istruzioni di questo lab.
 
-1. Selezionare la pagina **Progettazione** dal menu a sinistra dello studio.
-1. Selezionare l'esempio **Regressione - Previsione del prezzo delle automobili (Basic)**.
+1. Scaricare i dati di training che verranno usati in `https://github.com/MicrosoftLearning/mslearn-azure-ml/raw/refs/heads/main/Labs/02/diabetes-data.zip` e estrarre i file compressi.
+1. Tornare alla studio di Azure Machine Learning, selezionare la **pagina AutoML** dal menu sul lato sinistro dello studio.
+1. Selezionare **+ Nuovo processo** di Machine Learning automatizzato.
+1. **Nel passaggio Impostazioni di base** assegnare un nome univoco al processo di training e all'esperimento oppure usare i valori predefiniti assegnati. Selezionare **Avanti**.
+1. **Nel passaggio Tipo di attività e dati** selezionare **Classificazione** come tipo di attività e selezionare **+ Crea** per aggiungere i dati di training.
+2. **Nella pagina Crea asset** di dati, nel **passaggio Tipo di** dati assegnare un nome all'asset di dati , ad esempio `training-data`, e selezionare **Avanti**.
+1. **Nel passaggio Origine** dati selezionare **Da file** locali per caricare i dati di training scaricati in precedenza. Selezionare **Avanti**.
+1. **Nel passaggio Tipo di** archiviazione di destinazione verificare che **Archiviazione BLOB di Azure** sia selezionato come tipo di archivio dati e che **workspaceblobstore** sia l'archivio dati selezionato. Selezionare **Avanti**.
+1. **Nel passaggio di selezione** MLTable selezionare **Carica cartella** e selezionare la cartella estratta dal file compresso scaricato in precedenza. Selezionare **Avanti**.
+1. Esaminare le impostazioni per l'asset di dati e selezionare **Crea**.
+1. Tornare al **passaggio Tipo di attività e dati** , selezionare i dati appena caricati e selezionare **Avanti**.
 
-    Viene visualizzata una nuova pipeline. Nella parte superiore della pipeline viene visualizzato un componente per caricare i **Dati sul prezzo delle automobili (non elaborati)**. La pipeline elabora i dati ed esegue il training di un modello di regressione lineare per stimare il prezzo per ogni automobile.
-1. Selezionare **Configura e invia** nella parte superiore della pagina per aprire la finestra di dialogo **Configura il processo della pipeline**
-1. Nella pagina **Informazioni di base** selezionare **Crea nuovo** e impostare il nome dell'esperimento su `train-regression-designer` e quindi selezionare **Avanti**.
-1. Nella pagina **Input e output** selezionare **Avanti** senza apportare modifiche.
-1. Nella pagina **Impostazioni di runtime** viene visualizzato un errore perché non si dispone di un calcolo predefinito per l'esecuzione della pipeline.
+> **Suggerimento**: potrebbe essere necessario selezionare di nuovo il **tipo di attività Classificazione** prima di passare al passaggio successivo.
 
-Verrà ora creata una destinazione di calcolo.
+1. **Nel passaggio Impostazioni attività** selezionare **Diabetic (Boolean)** come colonna di destinazione, quindi aprire l'opzione **Visualizza impostazioni** di configurazione aggiuntive.
+1. **Nel riquadro Configurazione** aggiuntiva modificare la metrica primaria in **Accuratezza** e quindi selezionare **Salva**.
+1. Espandere l'opzione **Limiti** e impostare le proprietà seguenti:
+    * **Numero massimo di versioni di valutazione**: 10
+    * **Timeout dell'esperimento (minuti):** 60
+    * **Timeout di iterazione (minuti):** 15
+    * **Abilitare la terminazione** anticipata: selezionata
 
-## Creare una destinazione di calcolo
+1. Per **Dati** di test selezionare Divisione **train-test** e verificare che il **test percentuale dei dati** sia 10. Selezionare **Avanti**.
+1. **Nel passaggio Calcolo** verificare che il tipo di calcolo sia **Serveless** e che la dimensione della macchina virtuale selezionata sia **Standard_DS3_v2**. Selezionare **Avanti**.
 
-Per eseguire qualsiasi carico di lavoro all'interno dell'area di lavoro di Azure Machine Learning, è necessaria una risorsa di calcolo. Uno dei vantaggi offerti da Azure Machine Learning è la possibilità di creare un ambiente di calcolo basato sul cloud in cui è possibile eseguire esperimenti e script di training su larga scala.
+> **Nota**: Le istanze di calcolo e i cluster sono basati su immagini di macchine virtuali di Azure Standard. Per questo esercizio, l'immagine *Standard_DS3_v2* è consigliata per ottenere il bilanciamento ottimale dei costi e delle prestazioni. Se la quota della sottoscrizione in uso non include questa immagine, scegliere un'immagine alternativa, ma tenere presente che un'immagine più grande può generare costi più elevati e un'immagine più piccola potrebbe non essere sufficiente per completare le attività. In alternativa, chiedere all'amministratore di Azure di estendere la quota.
 
-1. In Azure Machine Learning Studio selezionare la pagina **Calcolo** dal menu a sinistra. Esistono quattro tipi di risorse di calcolo che è possibile usare:
-    - **Istanze di ambiente di calcolo**: Una macchina virtuale gestita da Azure Machine Learning. Ideale per lo sviluppo durante l'esplorazione dei dati e l'esperimento iterativo con i modelli di Machine Learning.
-    - **Cluster di elaborazione**: cluster scalabili di macchine virtuali per l'elaborazione su richiesta del codice di un esperimento. Ideale per l'esecuzione di codice di produzione o processi automatizzati.
-    - **Cluster Kubernetes**: Un cluster Kubernetes usato per il training e l'assegnazione dei punteggi. Ideale per la distribuzione di modelli in tempo reale su larga scala.
-    - **Ambiente di calcolo collegato**: Collegare le risorse di calcolo di Azure esistenti all'area di lavoro, ad esempio macchine virtuali o cluster di Azure Databricks.
-
-    Per eseguire il training di un modello di Machine Learning creato con progettazione, è possibile usare un'istanza di calcolo o un cluster di calcolo.
-
-2. Nella scheda **Istanze di ambiente di calcolo** aggiungere una nuova istanza di ambiente di calcolo con le impostazioni specificate di seguito. 
-    - **Nome dell’ambiente di calcolo**: *Immettere un nome univoco*
-    - **Località**: *Automaticamente la stessa posizione dell'area di lavoro*
-    - **Tipo di macchina virtuale**: `CPU`
-    - **Dimensioni macchina virtuale**: `Standard_DS11_v2`
-    - **Quota disponibile**: Vengono visualizzati i core dedicati disponibili.
-    - **Mostra impostazioni avanzate**: esaminare le impostazioni seguenti, ma non selezionarle.
-        - **Abilita l'accesso SSH**: `Unselected` *(è possibile usarlo per abilitare l'accesso diretto alla macchina virtuale usando un client SSH)*
-        - **Abilita rete virtuale**: `Unselected` *(viene solitamente usata negli ambienti aziendali per migliorare la sicurezza di rete)*
-        - **Assegna a un altro utente**: `Unselected` *(è possibile usarla per assegnare un'istanza di ambiente di calcolo a un data scientist)*
-        - **Effettua il provisioning con lo script di installazione**: `Unselected` *(è possibile usarlo per aggiungere uno script da eseguire nell'istanza remota al momento della creazione)*
-        - **Assegna un'identità gestita**: `Unselected`*(è possibile collegare identità gestite assegnate dal sistema o assegnate dall'utente per concedere l'accesso alle risorse)*
-
-3. Selezionare **Crea** e attendere l'avvio dell'istanza di calcolo e il relativo stato in **In esecuzione**.
-
-> **Nota**: Le istanze di calcolo e i cluster sono basati su immagini di macchine virtuali di Azure Standard. Per questo esercizio, è consigliabile usare l'immagine *Standard_DS11_v2* per ottenere un equilibrio ottimale tra costi e prestazioni. Se la quota della sottoscrizione in uso non include questa immagine, scegliere un'immagine alternativa, ma tenere presente che un'immagine più grande può generare costi più elevati e un'immagine più piccola potrebbe non essere sufficiente per completare le attività. In alternativa, chiedere all'amministratore di Azure di estendere la quota.
-
-## Eseguire la pipeline di training
-
-È stata creata una destinazione di calcolo ed è ora possibile eseguire la pipeline di training di esempio in Progettazione.
-
-1. Passare alla pagina **Finestra di progettazione**.
-1. Selezionare la bozza della pipeline **Regressione - Previsione del prezzo delle automobili (basic).**
-1. Selezionare **Configura e invia** nella parte superiore della pagina per aprire la finestra di dialogo **Configura il processo della pipeline**
-1. Nella pagina **Informazioni di base** selezionare **Crea nuovo** e impostare il nome dell'esperimento su `train-regression-designer` e quindi selezionare **Avanti**.
-1. Nella pagina **Input e output** selezionare **Avanti** senza apportare modifiche.
-1. In **Impostazioni runtime**, nell'elenco a discesa **Seleziona il tipo di calcolo**, selezionare *Istanza di calcolo* e nell'elenco a discesa **Seleziona l'istanza di calcolo di Azure ML** selezionare l’'istanza di calcolo appena creata.
-1. Selezionare **Rivedi e invia** per esaminare il processo della pipeline e quindi selezionare **Invia** per eseguire la pipeline di training.
-
-La pipeline di training verrà ora inviata all'istanza di calcolo. Il completamento della pipeline richiederà circa 10 minuti. Nel frattempo esaminiamo qualche altra pagina.
+1. Esaminare tutte le impostazioni e selezionare **Invia processo** di training.
 
 ## Usare i processi per visualizzare la cronologia
 
-Ogni volta che si esegue uno script o una pipeline nell'area di lavoro di Azure Machine Learning, viene registrato come **processo**. I processi consentono di tenere traccia dei carichi di lavoro eseguiti e confrontarli tra loro. I processi appartengono a un **esperimento**, che consente di raggruppare le esecuzioni di processi.
+Dopo aver inviato il processo, si verrà reindirizzati alla pagina del processo. I processi consentono di tenere traccia dei carichi di lavoro eseguiti e confrontarli tra loro. I processi appartengono a un **esperimento**, che consente di raggruppare le esecuzioni di processi. 
 
-1. Passare alla pagina **Processi** usando il menu a sinistra di Azure Machine Learning Studio.
-1. Selezionare l'esperimento **train-regression-designer** per visualizzarne le esecuzioni. Qui verrà visualizzata una panoramica di tutti i processi che fanno parte di questo esperimento. Se sono state eseguite più pipeline di training, questa vista consente di confrontare le pipeline e di identificarne la migliore.
-1. Selezionare l'ultimo processo nell'esperimento **train-regression-designer**.
-1. Si noti che viene mostrata la pipeline di training, dove è possibile vedere quali componenti sono stati eseguiti con successo o con esito negativo. Se il processo è ancora in esecuzione, è anche possibile identificare ciò che è in esecuzione.
-1. Per visualizzare i dettagli del processo della pipeline, selezionare la **Panoramica del processo** in alto a destra per espandere la **Panoramica del processo pipeline**.
-1. Si noti che nei parametri **Panoramica** è possibile trovare lo stato del processo, chi ha creato la pipeline, quando è stato creato e quanto tempo è necessario per eseguire la pipeline completa (tra le altre cose).
+1. Si noti che nei **parametri Panoramica** è possibile trovare lo stato del processo, chi lo ha creato, quando è stato creato e quanto tempo è necessario per l'esecuzione (tra le altre cose).
+1. Il completamento del processo di training richiederà 10-20 minuti. Al termine, è anche possibile visualizzare i dettagli di ogni singola esecuzione del componente, incluso l'output. È possibile esplorare la pagina del processo per comprendere come vengono sottoposti a training i modelli.
 
-    Quando si esegue uno script o una pipeline come processo, è possibile definire qualsiasi input e documentare qualsiasi output. Azure Machine Learning tiene anche traccia automaticamente delle proprietà del processo. Usando i processi, è possibile visualizzare facilmente la cronologia per comprendere cosa hanno già fatto l'utente o i colleghi.
-
+    Azure Machine Learning tiene automaticamente traccia delle proprietà del processo. Usando i processi, è possibile visualizzare facilmente la cronologia per comprendere cosa hanno già fatto l'utente o i colleghi.
     Durante la sperimentazione, i processi consentono di tenere traccia dei diversi modelli di cui si esegue il training per confrontare e identificare il modello migliore. Durante l'ambiente di produzione, i processi consentono di verificare se i carichi di lavoro automatizzati sono stati eseguiti come previsto.
-
-1. Al termine del processo, è anche possibile visualizzare i dettagli di ogni singola esecuzione del componente, incluso l'output. È possibile esplorare la pipeline per comprendere come viene eseguito il training del modello.
 
 ## Eliminare le risorse di Azure
 

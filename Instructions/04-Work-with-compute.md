@@ -54,6 +54,26 @@ Per creare l'area di lavoro di Azure Machine Learning, si userà l’interfaccia
 
 1. Attendere il completamento del comando, in genere sono necessari circa 5-10 minuti.
 
+    <details>  
+    <summary><b>Suggerimento</b> per la risoluzione dei problemi: errore di creazione dell'area di lavoro</summary><br>
+    <p>Se viene visualizzato un errore durante la creazione di un'area di lavoro tramite l'interfaccia della riga di comando, è necessario effettuare il provisioning manuale della risorsa:</p>
+    <ol>
+        <li>Nella home page portale di Azure selezionare <b>+ Crea una risorsa</b>.</li>
+        <li><i>Cercare Machine Learning</i> e quindi selezionare <b>Azure Machine Learning</b>. Selezionare <b>Crea</b>.</li>
+        <li>Creare una nuova risorsa di Azure Machine Learning con le impostazioni seguenti: <ul>
+                <li><b>Sottoscrizione</b>: <i>la sottoscrizione di Azure usata</i></li>
+                <li><b>Gruppo di risorse</b>: rg-dp100-labs</li>
+                <li><b>Nome</b> area di lavoro: mlw-dp100-labs</li>
+                <li><b>Area</b>: <i>selezionare l'area geografica più vicina</i></li>
+                <li><b>Account di archiviazione</b>: <i>prendere nota del nuovo account di archiviazione predefinito che verrà creato per l'area di lavoro</i></li>
+                <li><b>Insieme di credenziali delle chiavi</b>: <i>prendere nota del nuovo insieme di credenziali delle chiavi predefinito che verrà creato per l'area di lavoro</i></li>
+                <li><b>Application Insights</b>: <i>prendere nota della nuova risorsa Application Insights predefinita che verrà creata per l'area di lavoro</i></li>
+                <li><b>Registro contenitori</b>: nessuno (<i>ne verrà creato uno automaticamente la prima volta che si distribuisce un modello in un contenitore</i>)</li>
+            </ul>
+        <li>Selezionare <b>Rivedi e crea</b> e attende che l'area di lavoro e le relative risorse associate vengano create. In genere sono necessari circa 5 minuti.</li>
+    </ol>
+    </details>
+
 ## Creare lo script di installazione del calcolo
 
 Per eseguire i notebook all'interno dell'area di lavoro di Azure Machine Learning, è necessaria un'istanza di ambiente di calcolo. Per configurare l’istanza di ambiente di calcolo durante la creazione è possibile usare uno script di installazione.
