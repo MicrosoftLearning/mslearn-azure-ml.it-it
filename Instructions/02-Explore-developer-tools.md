@@ -60,6 +60,26 @@ Per iniziare, aprire Azure Cloud Shell, installare l'estensione Azure Machine Le
 
 1. Attendere che vengano create l'area di lavoro e le relative risorse associate, in genere sono necessari circa 5 minuti.
 
+    <details>  
+    <summary><b>Suggerimento</b> per la risoluzione dei problemi: errore di creazione dell'area di lavoro</summary><br>
+    <p>Se viene visualizzato un errore durante la creazione di un'area di lavoro tramite l'interfaccia della riga di comando, è necessario effettuare il provisioning manuale della risorsa:</p>
+    <ol>
+        <li>Nella home page portale di Azure selezionare <b>+ Crea una risorsa</b>.</li>
+        <li><i>Cercare Machine Learning</i> e quindi selezionare <b>Azure Machine Learning</b>. Selezionare <b>Crea</b>.</li>
+        <li>Creare una nuova risorsa di Azure Machine Learning con le impostazioni seguenti: <ul>
+                <li><b>Sottoscrizione</b>: <i>la sottoscrizione di Azure usata</i></li>
+                <li><b>Gruppo di risorse</b>: rg-dp100-labs</li>
+                <li><b>Nome</b> area di lavoro: mlw-dp100-labs</li>
+                <li><b>Area</b>: <i>selezionare l'area geografica più vicina</i></li>
+                <li><b>Account di archiviazione</b>: <i>prendere nota del nuovo account di archiviazione predefinito che verrà creato per l'area di lavoro</i></li>
+                <li><b>Insieme di credenziali delle chiavi</b>: <i>prendere nota del nuovo insieme di credenziali delle chiavi predefinito che verrà creato per l'area di lavoro</i></li>
+                <li><b>Application Insights</b>: <i>prendere nota della nuova risorsa Application Insights predefinita che verrà creata per l'area di lavoro</i></li>
+                <li><b>Registro contenitori</b>: nessuno (<i>ne verrà creato uno automaticamente la prima volta che si distribuisce un modello in un contenitore</i>)</li>
+            </ul>
+        <li>Selezionare <b>Rivedi e crea</b> e attende che l'area di lavoro e le relative risorse associate vengano create. In genere sono necessari circa 5 minuti.</li>
+    </ol>
+    </details>
+
 ## Creare un'istanza di ambiente di calcolo con l'interfaccia della riga di comando di Azure
 
 Un'altra parte importante dell'infrastruttura necessaria per eseguire il training di un modello di Machine Learning è l’ambiente di **calcolo**. Anche se è possibile eseguire il training dei modelli in locale, è più scalabile e conveniente usare il cloud compute.
@@ -84,6 +104,19 @@ In questo esercizio si creerà un'istanza di ambiente di calcolo con le impostaz
 
     Se compare un messaggio di errore che indica che esiste già un'istanza di ambiente di calcolo con quel nome, modificare il nome e ripetere il comando.
 
+    <details>  
+    <summary><b>Suggerimento</b> per la risoluzione dei problemi: Errore di creazione del calcolo</summary><br>
+    <p>Se viene visualizzato un errore durante la creazione di un'istanza di calcolo tramite l'interfaccia della riga di comando, è necessario effettuare manualmente il provisioning della risorsa:</p>
+    <ol>
+        <li>Nel portale di Azure passare all'area di lavoro di Azure Machine Learning denominata <b>mlw-dp100-labs</b>.</li>
+        <li>Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina <b>Panoramica</b> selezionare <b>Avvio Studio</b>. Nel browser verrà aperta un'altra scheda per aprire studio di Azure Machine Learning.</li>
+        <li>Chiudere tutti i popup visualizzati in studio.</li>
+        <li>All'interno del studio di Azure Machine Learning passare alla <b>pagina Calcolo</b> e selezionare+ <b>Nuovo</b> nella <b>scheda Istanze</b> di calcolo.</li>
+        <li>Assegnare all'istanza di calcolo un nome univoco e quindi selezionare <b>Standard_DS11_v2</b> come dimensione della macchina virtuale.</li>
+        <li>Selezionare <b>Rivedi e crea</b> e quindi <b>Crea</b>.</li>
+    </ol>
+    </details>
+
 ## Creare un cluster di elaborazione con l'interfaccia della riga di comando di Azure
 
 Anche se un'istanza di ambiente di calcolo è ideale per lo sviluppo, un cluster di elaborazione è più adatto quando si vuole eseguire il training di modelli di Machine Learning. Solo quando un processo viene inviato per usare il cluster di ambiente di calcolo, verrà ridimensionato in più di 0 nodi ed eseguirà il processo. Una volta che il cluster di elaborazione non è più necessario, verrà ridimensionato automaticamente in 0 nodi per ridurre al minimo i costi. 
@@ -104,6 +137,19 @@ Si creerà un cluster di elaborazione con le impostazioni seguenti:
     ```azurecli
     az ml compute create --name "aml-cluster" --size STANDARD_DS11_V2 --max-instances 2 --type AmlCompute -w mlw-dp100-labs -g rg-dp100-labs
     ```
+
+    <details>  
+    <summary><b>Suggerimento</b> per la risoluzione dei problemi: Errore di creazione del calcolo</summary><br>
+    <p>Se viene visualizzato un errore durante la creazione di un cluster di calcolo tramite l'interfaccia della riga di comando, è necessario effettuare il provisioning manuale della risorsa:</p>
+    <ol>
+        <li>Nel portale di Azure passare all'area di lavoro di Azure Machine Learning denominata <b>mlw-dp100-labs</b>.</li>
+        <li>Selezionare l'area di lavoro di Azure Machine Learning e nella relativa pagina <b>Panoramica</b> selezionare <b>Avvio Studio</b>. Nel browser verrà aperta un'altra scheda per aprire studio di Azure Machine Learning.</li>
+        <li>Chiudere tutti i popup visualizzati in studio.</li>
+        <li>All'interno della studio di Azure Machine Learning passare alla <b>pagina Calcolo</b> e selezionare+ <b>Nuovo</b> nella <b>scheda Cluster di</b> calcolo.</li>
+        <li>Scegliere la stessa area di quella in cui è stata creata l'area di lavoro e quindi selezionare <b>Standard_DS11_v2</b> come dimensioni della macchina virtuale. Selezionare <b>Avanti</b></li>
+        <li>Assegnare al cluster un nome univoco e quindi selezionare <b>Crea</b>.</li>
+    </ol>
+    </details>
 
 ## Configurare la workstation con lo studio di Azure Machine Learning
 
