@@ -110,7 +110,7 @@ Il codice per creare l'endpoint e distribuire un modello MLflow con Python SDK v
 
     > Selezionare **Autenticare** e, se viene visualizzata una notifica che chiede di eseguire l'autenticazione, seguire i passaggi necessari.
 
-1. Verificare che il notebook usi il kernel **Python 3.8 - AzureML**.
+1. Verificare che il notebook usi il **kernel Python 3.10 - AzureML** .
 1. Eseguire tutte le celle nel notebook.
 
 ## Eliminare le risorse di Azure
