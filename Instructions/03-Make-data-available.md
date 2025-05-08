@@ -137,7 +137,7 @@ Il codice per creare un archivio dati e asset di dati con l’SDK Python viene f
 
     > Selezionare **Autenticare** e, se viene visualizzata una notifica che chiede di eseguire l'autenticazione, seguire i passaggi necessari.
 
-1. Verificare che il notebook usi il kernel **Python 3.8 - AzureML**.
+1. Verificare che il notebook usi il **kernel Python 3.10 - AzureML** .
 1. Eseguire tutte le celle nel notebook.
 
 ## Facoltativo: Esplorare gli asset di dati

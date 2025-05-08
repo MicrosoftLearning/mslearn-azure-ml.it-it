@@ -185,7 +185,7 @@ Dopo aver verificato che l’ambiente di calcolo necessario è stato creato, è 
 
     > Selezionare **Autenticare** e, se viene visualizzata una notifica che chiede di eseguire l'autenticazione, seguire i passaggi necessari.
 
-1. Verificare che il notebook usi il **kernel Python 3.8 - AzureML** nell'angolo superiore destro dell'ambiente notebook. Ogni kernel ha una propria immagine con un proprio set di pacchetti preinstallati.
+1. Verificare che il notebook usi il **kernel Python 3.10 - AzureML** nell'angolo superiore destro dell'ambiente notebook. Ogni kernel ha una propria immagine con un proprio set di pacchetti preinstallati.
 1. Eseguire tutte le celle nel notebook.
 
 Verrà creato un nuovo processo nell'area di lavoro di Azure Machine Learning. Il processo tiene traccia degli input definiti nella configurazione del processo, del codice usato e degli output come le metriche per valutare il modello.

@@ -109,7 +109,7 @@ Ora che sono disponibili tutte le risorse necessarie, è possibile eseguire il n
 
     > Selezionare **Autenticare** e, se viene visualizzata una notifica che chiede di eseguire l'autenticazione, seguire i passaggi necessari.
 
-1. Verificare che il notebook usi il kernel **Python 3.8 - AzureML**.
+1. Verificare che il notebook usi il **kernel Python 3.10 - AzureML** .
 1. Eseguire tutte le celle nel notebook.
 
     Verrà creato un nuovo processo nell'area di lavoro di Azure Machine Learning. Il processo tiene traccia degli input definiti nella configurazione del processo, dell'asset di dati usato e degli output come le metriche per valutare il modello.
