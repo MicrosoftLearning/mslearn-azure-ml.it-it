@@ -87,8 +87,7 @@ Dopo aver creato l'area di lavoro e le risorse di calcolo necessarie, è possibi
 
     ```
     pip uninstall azure-ai-ml
-    pip install azure-ai-ml
-    pip install mlflow
+    pip install azure-ai-ml==1.27.1 mlflow==2.22.0 azureml-core==1.51.0 azureml-defaults==1.51.0 azureml-mlflow==1.51.0 azureml-telemetry==1.51.0 scikit-learn==1.5.1
     ```
 
     > Ignorare eventuali messaggi (di errore) che dicono che non è stato possibile trovare e disinstallare i pacchetti.
